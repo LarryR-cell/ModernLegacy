@@ -12,6 +12,8 @@ import flixel.math.FlxRect;
 
 using StringTools;
 
+
+
 typedef EventNote = {
 	strumTime:Float,
 	event:String,
@@ -77,6 +79,7 @@ class Note extends FlxSprite
 	public var sustainLength:Float = 0;
 	public var isSustainNote:Bool = false;
 	public var noteType(default, set):String = null;
+	public var splashTimer:Float = 0;
 
 	public var eventName:String = '';
 	public var eventLength:Int = 0;
