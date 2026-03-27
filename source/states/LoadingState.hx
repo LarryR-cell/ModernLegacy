@@ -61,9 +61,6 @@ class LoadingState extends MusicBeatState
 	var stopMusic:Bool = false;
 	var dontUpdate:Bool = false;
 
-	var barGroup:FlxSpriteGroup;
-	var bar:FlxSprite;
-	var barWidth:Int = 0;
 	var intendedPercent:Float = 0;
 	var curPercent:Float = 0;
 	var stateChangeDelay:Float = 0;
@@ -89,21 +86,6 @@ class LoadingState extends MusicBeatState
 	#end
 	override function create()
 	{
-		persistentUpdate = true;
-		barGroup = new FlxSpriteGroup();
-		add(barGroup);
-
-		var barBack:FlxSprite = new FlxSprite(0, 660).makeGraphic(1, 1, FlxColor.BLACK);
-		barBack.scale.set(FlxG.width - 300, 25);
-		barBack.updateHitbox();
-		barBack.screenCenter(X);
-		barGroup.add(barBack);
-
-		bar = new FlxSprite(barBack.x + 5, barBack.y + 5).makeGraphic(1, 1, FlxColor.WHITE);
-		bar.scale.set(0, 15);
-		bar.updateHitbox();
-		barGroup.add(bar);
-		barWidth = Std.int(barBack.width - 10);
 
 		#if HSCRIPT_ALLOWED
 		if(Mods.currentModDirectory != null && Mods.currentModDirectory.trim().length > 0)
@@ -113,11 +95,6 @@ class LoadingState extends MusicBeatState
 			{
 				try
 				{
-					hscript = new HScript(null, scriptPath);
-					hscript.set('getLoaded', function() return loaded);
-					hscript.set('getLoadMax', function() return loadMax);
-					hscript.set('barBack', barBack);
-					hscript.set('bar', bar);
 	
 					if(hscript.exists('onCreate'))
 					{
@@ -148,12 +125,12 @@ class LoadingState extends MusicBeatState
 		bg.setGraphicSize(Std.int(FlxG.width));
 		bg.color = 0xFFD16FFF;
 		bg.updateHitbox();
-		addBehindBar(bg);
+		add(bg);
 	
 		loadingText = new FlxText(520, 600, 400, Language.getPhrase('now_loading', 'Now Loading', ['...']), 32);
 		loadingText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, LEFT, OUTLINE_FAST, FlxColor.BLACK);
 		loadingText.borderSize = 2;
-		addBehindBar(loadingText);
+		add(loadingText);
 	
 		logo = new FlxSprite(0, 0).loadGraphic(Paths.image('loading_screen/icon'));
 		logo.antialiasing = ClientPrefs.data.antialiasing;
@@ -162,20 +139,20 @@ class LoadingState extends MusicBeatState
 		logo.screenCenter();
 		logo.x -= 50;
 		logo.y -= 40;
-		addBehindBar(logo);
+		add(logo);
 
 		#else // BASE GAME LOADING SCREEN
 		var bg = new FlxSprite().makeGraphic(1, 1, 0xFFCAFF4D);
 		bg.scale.set(FlxG.width, FlxG.height);
 		bg.updateHitbox();
 		bg.screenCenter();
-		addBehindBar(bg);
+		add(bg);
 
 		funkay = new FlxSprite(0, 0).loadGraphic(Paths.image('funkay'));
 		funkay.antialiasing = ClientPrefs.data.antialiasing;
 		funkay.setGraphicSize(0, FlxG.height);
 		funkay.updateHitbox();
-		addBehindBar(funkay);
+		add(funkay);
 		#end
 		super.create();
 
@@ -184,11 +161,6 @@ class LoadingState extends MusicBeatState
 			dontUpdate = true;
 			onLoad();
 		}
-	}
-
-	function addBehindBar(obj:flixel.FlxBasic)
-	{
-		insert(members.indexOf(barGroup), obj);
 	}
 
 	var transitioning:Bool = false;
@@ -216,9 +188,6 @@ class LoadingState extends MusicBeatState
 		{
 			if (Math.abs(curPercent - intendedPercent) < 0.001) curPercent = intendedPercent;
 			else curPercent = FlxMath.lerp(intendedPercent, curPercent, Math.exp(-elapsed * 15));
-
-			bar.scale.x = barWidth * curPercent;
-			bar.updateHitbox();
 		}
 		
 		#if HSCRIPT_ALLOWED
