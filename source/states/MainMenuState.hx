@@ -99,7 +99,7 @@ class MainMenuState extends MusicBeatState
 
 		var legacyVer:FlxText = new FlxText(12, FlxG.height - 64, 0, "Modern Legacy Engine v" + legacyVersion, 12);
 		legacyVer.scrollFactor.set();
-		legacyVer.setFormat(Paths.font(vcr.ttf), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		legacyVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(legacyVer);
 		var psychVer:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
 		psychVer.scrollFactor.set();
