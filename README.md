@@ -1,3 +1,4 @@
+![Friday Night Funkin': Modern Legacy Engine Logo](https://github.com/LarryR-cell/ModernLegacy/blob/main/docs/img/MLELogo.png)
 # Modern Legacy Engine
 
 Welcome to the Modern Legacy Engine. We have a list of planned and implemented features below. More may be added to this section.
