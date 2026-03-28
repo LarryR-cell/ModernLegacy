@@ -1,14 +1,26 @@
-![Friday Night Funkin': Modern Legacy Engine Logo](https://github.com/LarryR-cell/ModernLegacy/blob/main/docs/img/MLELogo.jpg)
+<html>
+  <body>
+    <center>
+      <img class="logoimg" src="https://github.com/LarryR-cell/ModernLegacy/blob/main/docs/img/MLELogo.jpg"/>
+    </center>
+  </body>
+</html>
+
 # Modern Legacy Engine
 
-Welcome to the Modern Legacy Engine. We have a list of planned and implemented features below. More may be added to this section.
+Welcome to the Modern Legacy Engine.
+If you encounter any bugs, feel free to make an issue or pull request.
+Any mods that are compatile with Psych 1.0.X should be co
 
 ## Planned Features
-- Hold note covers/splashes
 - Softcoded states
 - A better, more user-friendly Lua-API
 - Improvements to the chart editor
-- More legacy style UI (Loading screens, chart editor, etc.)
+- A note hold cover splash editor
+- Customizable lil buddies, chart editor backgrounds, freeplay backgrounds, etc.
+- Character portraits inside of the freeplay menu
 
 ## Implemented features
-- None, as of yet. This repository is pretty new, so check often for updates.
+- Hold note covers/splashes
+- Lil Buddies in the chart editor
+- More legacy simple UI (Loading screens, etc.)
