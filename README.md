@@ -1,8 +1,6 @@
 <html>
   <body>
-    <center>
-      <img class="logoimg" src="https://github.com/LarryR-cell/ModernLegacy/blob/main/docs/img/MLELogo.jpg"/>
-    </center>
+    <img class="logoimg" align="center" src="https://github.com/LarryR-cell/ModernLegacy/blob/main/docs/img/MLELogo.jpg"/>
   </body>
 </html>
 
