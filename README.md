@@ -1,14 +1,9 @@
-<html>
-  <body>
-    <img class="logoimg" align="center" src="https://github.com/LarryR-cell/ModernLegacy/blob/main/docs/img/MLELogo.jpg"/>
-  </body>
-</html>
-
+![MLELogo](https://github.com/LarryR-cell/ModernLegacy/blob/main/docs/img/MLELogo.jpg)
 # Modern Legacy Engine
 
 Welcome to the Modern Legacy Engine.
 If you encounter any bugs, feel free to make an issue or pull request.
-Any mods that are compatile with Psych 1.0.X should be co
+Any mods that are compatile with Psych 1.0.X should be compatible with MLE as well.
 
 ## Planned Features
 - Softcoded states
