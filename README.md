@@ -5,6 +5,9 @@ Welcome to the Modern Legacy Engine.
 If you encounter any bugs, feel free to make an issue or pull request.
 Any mods that are compatile with Psych 1.0.X should be compatible with MLE as well.
 
+## WARNINGS
+We do NOT currently offer official direct support for Linux or MacOS. Use these platforms at your own risk.
+
 ## Planned Features
 - Softcoded states
 - A better, more user-friendly Lua-API
